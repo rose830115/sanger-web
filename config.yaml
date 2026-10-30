@@ -3,8 +3,10 @@
 
 paths:
   # NAS 實體菌株定序根目錄（SKILL.md 路徑設定的 NAS_ROOT）。
-  # 換電腦／換掛載點時只改這一行；也可用環境變數 SANGER_NAS_ROOT 覆蓋。
-  nas_root: "/Volumes/實驗室共用區MRC/#YCT資料區#/63. 限制酶鑑定資料庫/MRC 實體菌株黴菌指紋/實體菌株定序"
+  # 本檔會公開在 GitHub，內部路徑不寫在這裡：實驗室本機把本檔複製成 config.local.yaml
+  # （已被 .gitignore 擋住）填入實際掛載路徑，啟動時設 SANGER_CONFIG=config.local.yaml；
+  # 或直接用環境變數 SANGER_NAS_ROOT 覆蓋。雲端上傳 zip 模式用不到這個值。
+  nas_root: ""
   rawdata_subdir: "rawdata"          # {nas_root}/rawdata
   output_subdir: "定序整理結果"       # {nas_root}/定序整理結果
   # 若要把輸出寫到別處（例如測試），填絕對或相對路徑；留空 = 用 nas_root/output_subdir

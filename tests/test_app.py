@@ -103,12 +103,20 @@ def test_report_groups_and_unknown_primer(tmp_path):
     assert (tmp_path / "S1_B1" / "S1A_x_ITS4_01.ab1").is_file()
 
 
-def test_output_under_nas_is_refused():
+def test_output_under_nas_is_refused(tmp_path):
+    cfg = {**CFG, "paths": {**CFG["paths"], "nas_root": str(tmp_path / "nas")}}
     with pytest.raises(runner.UploadError):
-        runner.assert_not_under_nas(NAS_RAW / "x", CFG)
+        runner.assert_not_under_nas(tmp_path / "nas" / "rawdata" / "x", cfg)
     with pytest.raises(runner.UploadError):
-        runner.assert_not_under_nas(Path("/Volumes/whatever/out"), CFG)
-    runner.assert_not_under_nas(PROJECT_ROOT / "test_output" / "x", CFG)
+        runner.assert_not_under_nas(Path("/Volumes/whatever/out"), cfg)
+    runner.assert_not_under_nas(PROJECT_ROOT / "test_output" / "x", cfg)
+
+
+def test_output_guard_with_empty_nas_root():
+    cfg = {**CFG, "paths": {**CFG["paths"], "nas_root": ""}}
+    with pytest.raises(runner.UploadError):
+        runner.assert_not_under_nas(Path("/Volumes/whatever/out"), cfg)
+    runner.assert_not_under_nas(PROJECT_ROOT / "test_output" / "x", cfg)
 
 
 def test_format_primer_pair():

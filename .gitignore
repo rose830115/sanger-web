@@ -6,3 +6,4 @@ test_output/
 .streamlit/secrets.toml
 local_output/
 /cache/
+config.local.yaml

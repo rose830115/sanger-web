@@ -20,7 +20,11 @@ python3 -m venv .venv                 # 本機 Python 3.14.7
 ## 設定
 
 所有路徑與判定門檻都在 `config.yaml`（QC、Assembly、BLAST、Step 6/7 參數）。
-換電腦或 NAS 掛載點不同：改 `paths.nas_root`，或設環境變數 `SANGER_NAS_ROOT`；
+repo 是公開的，所以 `config.yaml` 裡 `paths.nas_root` 留空、不放實驗室內部路徑。
+實驗室本機要用「本機資料夾」模式：把 `config.yaml` 複製成 `config.local.yaml`（已被
+`.gitignore` 擋住、不會上傳），填入實際 NAS 掛載路徑，啟動時指定：
+`SANGER_CONFIG=config.local.yaml .venv/bin/streamlit run app.py`；
+或改用環境變數 `SANGER_NAS_ROOT` 覆蓋。雲端上傳 zip 模式用不到 NAS 路徑。
 想把輸出寫到別處（測試）：`paths.output_dir`，或各腳本的 `--output-dir`。
 `SANGER_CONFIG` 環境變數或 `--config` 可指定另一份設定檔。
 

@@ -40,13 +40,21 @@ class UploadError(Exception):
 
 # ---------------------------------------------------------------- 安全閘
 def assert_not_under_nas(path: Path, cfg: dict) -> None:
-    """輸出夾若在 NAS 根目錄底下就直接擋下（NAS 只准讀）。"""
+    """輸出夾若在 NAS 根目錄底下就直接擋下（NAS 只准讀）。
+
+    nas_root 留空（公開 repo 的預設）時不可把空字串解析成專案根目錄，
+    否則所有本機輸出都會被誤擋；此時仍保留 /Volumes/ 的通用防線。
+    """
     from pipeline.config import _resolve  # noqa: PLC0415
 
-    nas = _resolve(cfg, cfg["paths"]["nas_root"]).resolve()
     target = Path(path).expanduser().resolve()
-    if target == nas or nas in target.parents or str(target).startswith("/Volumes/"):
+    if str(target).startswith("/Volumes/"):
         raise UploadError(f"輸出位置不可在 NAS（只准讀取）：{target}")
+    nas_root = cfg["paths"].get("nas_root") or ""
+    if nas_root:
+        nas = _resolve(cfg, nas_root).resolve()
+        if target == nas or nas in target.parents:
+            raise UploadError(f"輸出位置不可在 NAS（只准讀取）：{target}")
 
 
 # ---------------------------------------------------------------- 上傳驗證
