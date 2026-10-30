@@ -1,0 +1,1760 @@
+{
+ "Aspergillus": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "CF",
+    "gene": "CaM",
+    "primers": {
+     "fwd": {
+      "name": "CMD5",
+      "seq": "CCGAGTACAAGGARGCCTTC"
+     },
+     "rev": {
+      "name": "CMD6",
+      "seq": "CCGATRGAGGTCATRACGTGG"
+     }
+    },
+    "seq_verified": true,
+    "note": "Samson 2014 建議的暫定第二鑑定標記；備用引子 CF1/CF4"
+   },
+   {
+    "priority": 1.5,
+    "marker": "CF",
+    "gene": "CaM(備用)",
+    "primers": {
+     "fwd": {
+      "name": "CF1",
+      "seq": "GCCGACTCTTTGACYGARGAR"
+     },
+     "rev": {
+      "name": "CF4",
+      "seq": "TTTYTGCATCATRAGYTGGAC"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 2,
+    "marker": "Btub",
+    "gene": "BenA",
+    "primers": {
+     "fwd": {
+      "name": "Bt2a",
+      "seq": "GGTAACCAAATCGGTGCTGCTTTC"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true,
+    "note": "section Nigri 常擴增到旁系同源 tubC，改用 Ben2f/Bt2b 或 T22/T10"
+   },
+   {
+    "priority": 2.5,
+    "marker": "Btub",
+    "gene": "BenA(Nigri 專用)",
+    "primers": {
+     "fwd": {
+      "name": "Ben2f",
+      "seq": "TCCAGACTGGTCAGTGTGTAA"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 3,
+    "marker": "RPB2",
+    "gene": "RPB2",
+    "primers": {
+     "fwd": {
+      "name": "5F",
+      "seq": "GAYGAYMGWGATCAYTTYGG"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true,
+    "note": "難擴增；亦可用 5Feur/7CReur"
+   }
+  ],
+  "database": "NCBI nt（挑 type/reference 序列）；Westerdijk(CBS) Aspergillus 序列；Samson 2014、Houbraken 2020 accepted species list 附 type 序列",
+  "note": "ITS 只能到 section/species complex；Flavi 的 A. flavus/oryzae/parasiticus/sojae ITS 無法分；Nigri 種級以 CaM 為主；Fumigati 隱蔽種靠 Btub/CF；舊屬名 Eurotium/Neosartorya/Emericella 已併入；文獻未給相似度門檻，以 type 序列+建樹判讀",
+  "strains": 78
+ },
+ "Penicillium": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "BenA",
+    "primers": {
+     "fwd": {
+      "name": "Bt2a",
+      "seq": "GGTAACCAAATCGGTGCTGCTTTC"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true,
+    "note": "Visagie 2014 建議的最佳第二鑑定標記"
+   },
+   {
+    "priority": 2,
+    "marker": "CF",
+    "gene": "CaM",
+    "primers": {
+     "fwd": {
+      "name": "CMD5",
+      "seq": "CCGAGTACAAGGARGCCTTC"
+     },
+     "rev": {
+      "name": "CMD6",
+      "seq": "CCGATRGAGGTCATRACGTGG"
+     }
+    },
+    "seq_verified": true,
+    "note": "備用引子 CF1/CF4"
+   },
+   {
+    "priority": 2.5,
+    "marker": "CF",
+    "gene": "CaM(備用)",
+    "primers": {
+     "fwd": {
+      "name": "CF1",
+      "seq": "GCCGACTCTTTGACYGARGAR"
+     },
+     "rev": {
+      "name": "CF4",
+      "seq": "TTTYTGCATCATRAGYTGGAC"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 3,
+    "marker": "RPB2",
+    "gene": "RPB2",
+    "primers": {
+     "fwd": {
+      "name": "5Feur",
+      "seq": "GAYGAYCGKGAYCAYTTCGG"
+     },
+     "rev": {
+      "name": "7CReur",
+      "seq": "CCCATRGCYTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true,
+    "note": "亦可用 5F/7CR"
+   }
+  ],
+  "database": "NCBI nt（僅初篩）；Visagie 2014 accepted species 與 type 序列表（ITS/BenA/CaM/RPB2）",
+  "note": "ITS 可定 section/species complex，近緣種不足；新種描述建議四基因合用；舊名 Eupenicillium、subg. Biverticillium 需轉換（Biverticillium 已劃入 Talaromyces）；文獻未給相似度門檻",
+  "strains": 46
+ },
+ "Trichoderma": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "TEF1",
+    "gene": "tef1",
+    "primers": {
+     "fwd": {
+      "name": "EF1-728F",
+      "seq": "CATCGAGAAGTTCGAGAAGG"
+     },
+     "rev": {
+      "name": "TEF1LLErev",
+      "seq": "AACTTGCAGGCAATGTGG"
+     }
+    },
+    "seq_verified": true,
+    "note": "只擴增含部分 exon 6 的片段；亦見 EF1-728F/EF2 組合"
+   },
+   {
+    "priority": 2,
+    "marker": "RPB2",
+    "gene": "rpb2",
+    "primers": {
+     "fwd": {
+      "name": "5F",
+      "seq": "GAYGAYMGWGATCAYTTYGG"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true,
+    "note": "文獻稱 fRPB2-5f/fRPB2-7cr，序列同 5F/7CR"
+   }
+  ],
+  "database": "MIST（ITS/tef1/rpb2 策展庫，循序 BLASTn，預設相似度 95%、覆蓋率 0.5）；TrichOKEY/TrichoBLAST（輔助）；NCBI nt 誤標率高不可單靠",
+  "note": "ITS 僅作初篩（ITS1/ITS4 或 ITS5/ITS4）；種內最低相似度 ITS 91%、tef1 87%，門檻不能單用百分比；Harzianum 複合群需 tef1+rpb2 並建樹；Hypocrea 舊名查舊序列要一起找",
+  "strains": 11
+ },
+ "Talaromyces": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "BenA",
+    "primers": {
+     "fwd": {
+      "name": "Bt2a",
+      "seq": "GGTAACCAAATCGGTGCTGCTTTC"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true,
+    "note": "Yilmaz 2014 日常鑑定以 BenA 為主"
+   },
+   {
+    "priority": 1.5,
+    "marker": "Btub",
+    "gene": "BenA(section Islandici)",
+    "primers": {
+     "fwd": {
+      "name": "T10",
+      "seq": "ACGATAGGTTCACCTCCAGAC"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true,
+    "note": "退火 52 °C"
+   },
+   {
+    "priority": 2,
+    "marker": "RPB2",
+    "gene": "RPB2",
+    "primers": {
+     "fwd": {
+      "name": "5F",
+      "seq": "GAYGAYMGWGATCAYTTYGG"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 3,
+    "marker": "CF",
+    "gene": "CaM",
+    "primers": {
+     "fwd": {
+      "name": "CMD5",
+      "seq": "CCGAGTACAAGGARGCCTTC"
+     },
+     "rev": {
+      "name": "CMD6",
+      "seq": "CCGATRGAGGTCATRACGTGG"
+     }
+    },
+    "seq_verified": true,
+    "note": "輔助位點；Talaromyces 用法細節需另查 Houbraken 2020"
+   }
+  ],
+  "database": "NCBI nt + Yilmaz 2014 附 type 序列（ITS barcode、BenA 第二標記）",
+  "note": "ITS 先定 section，種級靠 Btub；舊名 Penicillium purpurogenum/funiculosum/marneffei 要轉 Talaromyces；T. marneffei 為致病菌，注意生物安全；文獻未給相似度門檻",
+  "strains": 9
+ },
+ "Cladosporium": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "ACT",
+    "gene": "act",
+    "primers": {
+     "fwd": {
+      "name": "ACT-512F",
+      "seq": "ATGTGCAAGGCCGGTTTCGC"
+     },
+     "rev": {
+      "name": "ACT-783R",
+      "seq": "TACGAGTCCTTCTGGCCCAT"
+     }
+    },
+    "seq_verified": true,
+    "note": "實驗室目前無 ACT 慣用名，建議新增；若只能挑一個基因，act 被評為種級最適單一標記(WARN:該論文僅讀摘要)"
+   },
+   {
+    "priority": 2,
+    "marker": "TEF1",
+    "gene": "tef1",
+    "primers": {
+     "fwd": {
+      "name": "EF1-728F",
+      "seq": "CATCGAGAAGTTCGAGAAGG"
+     },
+     "rev": {
+      "name": "EF1-986R",
+      "seq": "TACTTGAAGGAACCCTTACC"
+     }
+    },
+    "seq_verified": true,
+    "note": "產物約 350 bp 為 Diaporthe 旁證，Cladosporium 文獻未載；備用反向 EF2"
+   }
+  ],
+  "database": "NCBI nt（C. cladosporioides 標名過度使用，需謹慎）；優先 Bensch 2010/2012、Sandoval-Denis 2016 的 ex-type 序列（Westerdijk/CBS）",
+  "note": "三大複合群 cladosporioides/herbarum/sphaerospermum：先 ITS 判群，再 act+tef1 判種；ITS 100% 一致不代表同種；BLAST 結果為 Cladosporium sp. 或多種並列 → 必做 act+tef1；判讀門檻未查得",
+  "strains": 8
+ },
+ "Fusarium": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "TEF1",
+    "gene": "tef1 (EF-1α)",
+    "primers": {
+     "fwd": {
+      "name": "EF1",
+      "seq": "ATGGGTAAGGARGACAAGAC"
+     },
+     "rev": {
+      "name": "EF2",
+      "seq": "GGARGTACCAGTSATCATG"
+     }
+    },
+    "seq_verified": true,
+    "note": "部分序列 639-683 bp；備用 EF1/EF22T"
+   },
+   {
+    "priority": 1.5,
+    "marker": "TEF1",
+    "gene": "tef1(備用)",
+    "primers": {
+     "fwd": {
+      "name": "EF1",
+      "seq": "ATGGGTAAGGARGACAAGAC"
+     },
+     "rev": {
+      "name": "EF22T",
+      "seq": "AGGAACCCTTACCGAGCTC"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 2,
+    "marker": "RPB2",
+    "gene": "rpb2",
+    "primers": {
+     "fwd": {
+      "name": "5f2",
+      "seq": "GGGGWGAYCAGAAGAAGGC"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true,
+    "note": "5f2/7cr 區段 882 bp；延伸 7cf/11ar 約 860 bp"
+   },
+   {
+    "priority": 2.5,
+    "marker": "RPB2",
+    "gene": "rpb2(延伸)",
+    "primers": {
+     "fwd": {
+      "name": "7cf",
+      "seq": "ATGGGYAARCAAGCYATGGG"
+     },
+     "rev": {
+      "name": "11ar",
+      "seq": "GCRTGGATCTTRTCRTCSACC"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 3,
+    "marker": "CF",
+    "gene": "cmdA (CaM)",
+    "primers": {
+     "fwd": {
+      "name": "CL1",
+      "seq": "GARTWCAAGGAGGCCTTCTC"
+     },
+     "rev": {
+      "name": "CL2A",
+      "seq": "TTTTTGCATCATGAGTTGGAC"
+     }
+    },
+    "seq_verified": true,
+    "note": "選用，非必要；僅特定複合群(如 FFSC)與 FUSARIOID-ID 多位點時加；替代 CAL-228F/CAL-2Rd"
+   },
+   {
+    "priority": 3.5,
+    "marker": "CF",
+    "gene": "cmdA(替代)",
+    "primers": {
+     "fwd": {
+      "name": "CAL-228F",
+      "seq": "GAGTTCAAGGAGGCCTTCTCCC"
+     },
+     "rev": {
+      "name": "CAL-2Rd",
+      "seq": "TGRTCNGCCTCDCGGATCATCTC"
+     }
+    },
+    "seq_verified": true
+   }
+  ],
+  "database": "FUSARIOID-ID（fusarium.org，經策展 BLASTn）；FUSARIUM-ID v3.0（isolate.fusariumdb.org，TEF1 為主）；Fusarium MLST（Westerdijk，人/動物感染株）；NCBI nt 僅初篩",
+  "note": "ITS 僅到複合群且有 nonorthologous ITS2 型別；TEF1 與 RPB2 不一致視為未解；FOSC/FFSC/FIESC 為複合群，群內再分種需 RPB2 或多基因；F. solani 類部分已移 Neocosmospora；判讀百分比門檻未查得",
+  "strains": 6
+ },
+ "Curvularia": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "GAPDH",
+    "gene": "gapdh",
+    "primers": {
+     "fwd": {
+      "name": "gpd1",
+      "seq": "CAACGGCTTCGGTCGCATTG"
+     },
+     "rev": {
+      "name": "gpd2",
+      "seq": "GCCAAGCAGTTGGTTGTGC"
+     }
+    },
+    "seq_verified": true,
+    "note": "作者建議單一首選；約 450 bp 為 Alternaria 論文表列，Curvularia 文獻未載"
+   },
+   {
+    "priority": 2,
+    "marker": "TEF1",
+    "gene": "tef1",
+    "primers": {
+     "fwd": {
+      "name": "EF1-983F",
+      "seq": "GCYCCYGGHCAYCGTGAYTTYAT"
+     },
+     "rev": {
+      "name": "EF1-2218R",
+      "seq": "ATGACACCRACRGCRACRGTYTG"
+     }
+    },
+    "seq_verified": true,
+    "note": "約 1000 bp(Nigrospora 論文)"
+   }
+  ],
+  "database": "NCBI nt",
+  "note": "ITS 只能到群或近緣種組（C. suttoniae 與 C. vietnamensis ITS 100% 相同）；與 Bipolaris、Exserohilum 同屬 Pleosporaceae，早期 GenBank 標示混雜",
+  "strains": 4
+ },
+ "Byssochlamys": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "BenA",
+    "primers": {
+     "fwd": {
+      "name": "Bt2a",
+      "seq": "GGTAACCAAATCGGTGCTGCTTTC"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true,
+    "note": "Eurotiales 通用組，非 Samson 2009 驗證，需實測"
+   },
+   {
+    "priority": 2,
+    "marker": "CF",
+    "gene": "CaM",
+    "primers": {
+     "fwd": {
+      "name": "CMD5",
+      "seq": "CCGAGTACAAGGARGCCTTC"
+     },
+     "rev": {
+      "name": "CMD6",
+      "seq": "CCGATRGAGGTCATRACGTGG"
+     }
+    },
+    "seq_verified": true,
+    "note": "亦可用 CF1/CF4；通用組需實測"
+   },
+   {
+    "priority": 3,
+    "marker": "RPB2",
+    "gene": "RPB2",
+    "primers": {
+     "fwd": {
+      "name": "5F",
+      "seq": "GAYGAYMGWGATCAYTTYGG"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true,
+    "note": "通用組需實測"
+   }
+  ],
+  "database": "NCBI nt；Samson 2009 GenBank 序列 FJ389920-FJ390009",
+  "note": "ITS 不可單獨作種級依據(B. verrucosa 被 ITS 放到屬外)；Houbraken 2020 起 Paecilomyces 名稱優先於 Byssochlamys，報告需同列新舊名；B. spectabilis = Paecilomyces variotii 有性型，勿與 Paecilomyces 重複計算",
+  "strains": 4
+ },
+ "Chaetomium": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "tub2",
+    "primers": {
+     "fwd": {
+      "name": "T1",
+      "seq": "AACATGCGTGAGATTGTAAGT"
+     },
+     "rev": {
+      "name": "TUB4Rd",
+      "seq": "CCRGAYTGRCCRAARACRAAGTTGTC"
+     }
+    },
+    "seq_verified": true,
+    "note": "Wang 2022 建議的第二鑑定基因，解析度好且比 rpb2 易擴增"
+   },
+   {
+    "priority": 2,
+    "marker": "RPB2",
+    "gene": "rpb2",
+    "primers": {
+     "fwd": {
+      "name": "5f2",
+      "seq": "GGGGWGAYCAGAAGAAGGC"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true,
+    "note": "替代反向 rpb2AM-7R(Miller & Huhndorf 2005)"
+   },
+   {
+    "priority": 2.5,
+    "marker": "RPB2",
+    "gene": "rpb2(替代)",
+    "primers": {
+     "fwd": {
+      "name": "5f2",
+      "seq": "GGGGWGAYCAGAAGAAGGC"
+     },
+     "rev": {
+      "name": "rpb2AM-7R",
+      "seq": "GAATRTTGGCCATGGTRTCCAT"
+     }
+    },
+    "seq_verified": true
+   }
+  ],
+  "database": "NCBI nt 以 tub2 為主、輔以 rpb2；Wang 2016/2022 系統發生樹（無專屬公開 BLAST 庫)",
+  "note": "ITS 對 Chaetomiaceae 不可靠，不同種可共用相同 ITS；許多 Chaetomium 已改歸 Amesia、Arcopilus、Collariella、Dichotomopilus、Ovatospora 等屬，比對後屬名要檢查",
+  "strains": 3
+ },
+ "Paecilomyces": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "ITS",
+    "gene": "ITS",
+    "primers": {
+     "fwd": {
+      "name": "V9G",
+      "seq": "TTACGTCCCTGCCCTTTGTA"
+     },
+     "rev": {
+      "name": "LS266",
+      "seq": "GCATTCCCAAACAACTCGACTC"
+     }
+    },
+    "seq_verified": true,
+    "note": "初篩；或 ITS1/ITS4"
+   },
+   {
+    "priority": 2,
+    "marker": "Btub",
+    "gene": "BenA",
+    "primers": {
+     "fwd": {
+      "name": "Bt2a",
+      "seq": "GGTAACCAAATCGGTGCTGCTTTC"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true,
+    "note": "Eurotiales 通用組，非 Paecilomyces 驗證，需實測"
+   },
+   {
+    "priority": 3,
+    "marker": "CF",
+    "gene": "CaM",
+    "primers": {
+     "fwd": {
+      "name": "CMD5",
+      "seq": "CCGAGTACAAGGARGCCTTC"
+     },
+     "rev": {
+      "name": "CMD6",
+      "seq": "CCGATRGAGGTCATRACGTGG"
+     }
+    },
+    "seq_verified": true,
+    "note": "亦可用 CF1/CF4；RPB2 補強；通用組需實測"
+   }
+  ],
+  "database": "NCBI nt（Paecilomyces 名稱混雜，須挑 type/reference 序列）",
+  "note": "P. variotii 群(Paecilomyces s.s.)ITS 或 Btub 任一足以區分已知種；隱蔽姊妹種 P. paravariotii(2023) ITS 解析度未知；Purpureocillium lilacinum 等舊名混雜；有性型舊名 Byssochlamys spectabilis",
+  "strains": 3
+ },
+ "Rhizopus": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "TEF1",
+    "gene": "tef1 (EF-1α)",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "TEF1 引子序列待查（最可能出處 Abe 2010）；actin 亦為候選"
+   },
+   {
+    "priority": 2,
+    "marker": "LSU",
+    "gene": "LSU D1/D2",
+    "primers": {
+     "fwd": {
+      "name": "LR0R",
+      "seq": "ACCCGCTGAACTTAAGC"
+     },
+     "rev": {
+      "name": "LR5",
+      "seq": "TCCTGAGGGAAACTTCG"
+     }
+    },
+    "seq_verified": true,
+    "note": "補充；研究檔未指定該屬專用 LSU 引子，採通用 LR0R/LR5"
+   }
+  ],
+  "database": "NCBI nt（R. microsporus / R. stolonifer / R. arrhizus 三群）",
+  "note": "ITS 大致能到種，但 R. arrhizus(=oryzae) 的 var. arrhizus / var. delemar / R. delemar 需額外基因；R. oryzae 舊名需對應 R. arrhizus、R. delemar",
+  "strains": 3
+ },
+ "Neurospora": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "待查",
+    "gene": "多基因座(Dettman 2003)",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查：基因與引子未取得全文"
+   }
+  ],
+  "database": "NCBI nt（專屬鑑定資料庫未查得）",
+  "note": "ITS 是否足以分庫內 2 種文獻未載，需先確認是哪 2 種；N. discreta 為多隱種複合群，ITS 只能報到複合群",
+  "strains": 2
+ },
+ "Arthrinium": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "TUB2",
+    "primers": {
+     "fwd": {
+      "name": "T1",
+      "seq": "AACATGCGTGAGATTGTAAGT"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 2,
+    "marker": "TEF1",
+    "gene": "tef1",
+    "primers": {
+     "fwd": {
+      "name": "EF1-728F",
+      "seq": "CATCGAGAAGTTCGAGAAGG"
+     },
+     "rev": {
+      "name": "EF2",
+      "seq": "GGARGTACCAGTSATCATG"
+     }
+    },
+    "seq_verified": true,
+    "note": "兩者為不同論文的引子，組合產物大小文獻未載"
+   }
+  ],
+  "database": "NCBI nt；判讀配合 Pintos 2019、Pintos & Alvarado 2021 之樹",
+  "note": "ITS 不足為資料推論(近緣種 ITS 相似度 99% 而 TUB2/TEF1 96%)；Arthrinium 已拆為 Arthrinium s.str. 與 Apiospora，竹生/環境分離株多屬 Apiospora，學名需轉換",
+  "strains": 2
+ },
+ "Purpureocillium": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "TEF1",
+    "gene": "tef1",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查；可暫用 EF1/EF2 通用嘗試，但此組用於本屬未經文獻確認"
+   },
+   {
+    "priority": 2,
+    "marker": "RPB1",
+    "gene": "rpb1",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查(Perdomo 2013)"
+   }
+  ],
+  "database": "NCBI nt（本屬序列量少）",
+  "note": "ITS 可到屬，到種需 TEF1；生防線蟲菌株與臨床株 ITS/TEF 相同，無法區分來源；舊名 Paecilomyces lilacinus 在 NCBI 仍常見",
+  "strains": 2
+ },
+ "Alternaria": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "GAPDH",
+    "gene": "gapdh",
+    "primers": {
+     "fwd": {
+      "name": "gpd1",
+      "seq": "CAACGGCTTCGGTCGCATTG"
+     },
+     "rev": {
+      "name": "gpd2",
+      "seq": "GCCAAGCAGTTGGTTGTGC"
+     }
+    },
+    "seq_verified": true,
+    "note": "約 450 bp；勿用 PMC11508739 的 gpd2 寫法 GCCAAGGAGTTGGTTGTGC(疑筆誤)"
+   },
+   {
+    "priority": 2,
+    "marker": "Alt a 1",
+    "gene": "Alt a 1",
+    "primers": {
+     "fwd": {
+      "name": "Alt-for",
+      "seq": "ATGCAGTTCACCACCATCGC"
+     },
+     "rev": {
+      "name": "Alt-rev",
+      "seq": "ACGAGGGTGAYGTAGGCGTC"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 3,
+    "marker": "RPB2",
+    "gene": "rpb2",
+    "primers": {
+     "fwd": {
+      "name": "5f2",
+      "seq": "GGGGWGAYCAGAAGAAGGC"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true,
+    "note": "文獻稱 RPB2-5F2/fRPB2-7cR；勿與 fRPB2-5F(=5F) 混用"
+   },
+   {
+    "priority": 4,
+    "marker": "TEF1",
+    "gene": "tef1(備)",
+    "primers": {
+     "fwd": {
+      "name": "EF1-728F",
+      "seq": "CATCGAGAAGTTCGAGAAGG"
+     },
+     "rev": {
+      "name": "EF1-986R",
+      "seq": "TACTTGAAGGAACCCTTACC"
+     }
+    },
+    "seq_verified": true
+   }
+  ],
+  "database": "NCBI nt；依 Woudenberg 2013 分 section，在 section 內建樹；Westerdijk Alternaria 資料",
+  "note": "section Alternaria 內小孢子種 ITS 幾乎無差異；同 section 内 ITS 100% 不能下種名；2013 起吸收 Ulocladium、Embellisia 等 12 屬",
+  "strains": 2
+ },
+ "Aplosporella": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "TEF1",
+    "gene": "tef1",
+    "primers": {
+     "fwd": {
+      "name": "EF1-688F",
+      "seq": "CGGTCACTTGATCTACAAGTGC"
+     },
+     "rev": {
+      "name": "EF1-1251R",
+      "seq": "CCTCGAACTCACCAGTACCG"
+     }
+    },
+    "seq_verified": true,
+    "note": "Alves 2008；或 EF1-728F/EF1-986R"
+   },
+   {
+    "priority": 2,
+    "marker": "Btub",
+    "gene": "TUB2(備)",
+    "primers": {
+     "fwd": {
+      "name": "Bt2a",
+      "seq": "GGTAACCAAATCGGTGCTGCTTTC"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true
+   }
+  ],
+  "database": "NCBI nt（可比對的 ex-type 序列少）",
+  "note": "WARN：ITS 解析度由同目 Botryosphaeriales 推論，無 Aplosporella 專文；Aplosporella 專屬建議未直接查得",
+  "strains": 2
+ },
+ "Parasarocladium": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "tub2",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查（Gonçalves 2019 採 ITS+tub2+act1）；Bt2a/Bt2b 通用組未經本屬驗證"
+   }
+  ],
+  "database": "NCBI nt",
+  "note": "ITS+LSU 可先確認到屬，到種需 tub2 或 act；Emericellopsis 近緣；該株需先確認種名",
+  "strains": 1
+ },
+ "Engyodontium": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "tub2",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查(Tsang 2016)"
+   },
+   {
+    "priority": 2,
+    "marker": "TEF1/RPB2",
+    "gene": "tef1 / rpb2",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查(Parker 2022)"
+   }
+  ],
+  "database": "NCBI nt（需同時搜 Engyodontium album 與 Parengyodontium album）",
+  "note": "E. album 現名 Parengyodontium album，屬名需更新；P. album 有三個亞分支",
+  "strains": 1
+ },
+ "Neofusicoccum": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "TEF1",
+    "gene": "tef1",
+    "primers": {
+     "fwd": {
+      "name": "EF1-688F",
+      "seq": "CGGTCACTTGATCTACAAGTGC"
+     },
+     "rev": {
+      "name": "EF1-1251R",
+      "seq": "CCTCGAACTCACCAGTACCG"
+     }
+    },
+    "seq_verified": true,
+    "note": "或 EF1-728F/EF1-986R"
+   },
+   {
+    "priority": 2,
+    "marker": "Btub",
+    "gene": "TUB2",
+    "primers": {
+     "fwd": {
+      "name": "Bt2a",
+      "seq": "GGTAACCAAATCGGTGCTGCTTTC"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 3,
+    "marker": "RPB2",
+    "gene": "rpb2",
+    "primers": {
+     "fwd": {
+      "name": "5f2",
+      "seq": "GGGGWGAYCAGAAGAAGGC"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true
+   }
+  ],
+  "database": "NCBI nt + Zhang 2021、Phillips 2013 ex-type 資料集",
+  "note": "N. parvum/ribis/australe 複合群 ITS 無法區分；專屬引子驗證性標 WARN",
+  "strains": 1
+ },
+ "Epicoccum": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "TUB2",
+    "primers": {
+     "fwd": {
+      "name": "Bt2a",
+      "seq": "GGTAACCAAATCGGTGCTGCTTTC"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 2,
+    "marker": "RPB2",
+    "gene": "rpb2",
+    "primers": {
+     "fwd": {
+      "name": "5f2",
+      "seq": "GGGGWGAYCAGAAGAAGGC"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true,
+    "note": "文獻稱 RPB2-5F2/fRPB2-7cR"
+   }
+  ],
+  "database": "NCBI nt + Chen 2015/2017 ex-type 資料集",
+  "note": "Didymellaceae 成員；種級建議 ITS+LSU+rpb2+tub2 多基因",
+  "strains": 1
+ },
+ "Didymellaceae (科級)": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "LSU",
+    "gene": "LSU",
+    "primers": {
+     "fwd": {
+      "name": "LR0R",
+      "seq": "ACCCGCTGAACTTAAGC"
+     },
+     "rev": {
+      "name": "LR5",
+      "seq": "TCCTGAGGGAAACTTCG"
+     }
+    },
+    "seq_verified": true,
+    "note": "先 LSU+ITS 判屬；LR0R/LR5 有兩種長度寫法，以實驗室實際合成序列為準"
+   },
+   {
+    "priority": 2,
+    "marker": "RPB2",
+    "gene": "rpb2",
+    "primers": {
+     "fwd": {
+      "name": "5f2",
+      "seq": "GGGGWGAYCAGAAGAAGGC"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 3,
+    "marker": "Btub",
+    "gene": "TUB2",
+    "primers": {
+     "fwd": {
+      "name": "Bt2a",
+      "seq": "GGTAACCAAATCGGTGCTGCTTTC"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true
+   }
+  ],
+  "database": "NCBI nt + Chen 2017 ex-type",
+  "note": "此株只記到科級，先做 ITS+LSU 判屬再決定後續；科內舊 Phoma 名稱已重新分屬",
+  "strains": 1
+ },
+ "Aureobasidium": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "TEF1",
+    "gene": "EF1α",
+    "primers": {
+     "fwd": {
+      "name": "EF1-728F",
+      "seq": "CATCGAGAAGTTCGAGAAGG"
+     },
+     "rev": {
+      "name": "EF1-986R",
+      "seq": "TACTTGAAGGAACCCTTACC"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 2,
+    "marker": "Btub/ELO2/RPB2",
+    "gene": "BTUB / ELO2 / RPB2",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查（最可能出處 Persoonia 2025 補充表）"
+   }
+  ],
+  "database": "NCBI nt + 2025 Persoonia 修訂的 type 序列",
+  "note": "WARN：A. pullulans 複合群已分出多個種/變種；引子序列待查",
+  "strains": 1
+ },
+ "Nigrospora": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "TEF1",
+    "gene": "tef1",
+    "primers": {
+     "fwd": {
+      "name": "EF1-728F",
+      "seq": "CATCGAGAAGTTCGAGAAGG"
+     },
+     "rev": {
+      "name": "EF1-986R",
+      "seq": "TACTTGAAGGAACCCTTACC"
+     }
+    },
+    "seq_verified": true,
+    "note": "亦可用 EF1-983F/EF1-2218R"
+   },
+   {
+    "priority": 2,
+    "marker": "Btub",
+    "gene": "TUB2",
+    "primers": {
+     "fwd": {
+      "name": "Bt2a",
+      "seq": "GGTAACCAAATCGGTGCTGCTTTC"
+     },
+     "rev": {
+      "name": "Bt2b",
+      "seq": "ACCCTCAGTGTAGTGACCCTTGGC"
+     }
+    },
+    "seq_verified": true
+   }
+  ],
+  "database": "NCBI nt + Wang 2017 type 資料集",
+  "note": "Wang 2017 建議 ITS+TEF1+TUB2 多基因；N. sphaerica 為最常見種",
+  "strains": 1
+ },
+ "Pseudopithomyces": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "TEF1",
+    "gene": "tef1(預設候補)",
+    "primers": {
+     "fwd": {
+      "name": "EF1-728F",
+      "seq": "CATCGAGAAGTTCGAGAAGG"
+     },
+     "rev": {
+      "name": "EF1-986R",
+      "seq": "TACTTGAAGGAACCCTTACC"
+     }
+    },
+    "seq_verified": true,
+    "note": "研究檔未確定該屬所用基因，此為預設候補，需讀 Stud Mycol 2025 全文確認"
+   },
+   {
+    "priority": 2,
+    "marker": "RPB2",
+    "gene": "rpb2(預設候補)",
+    "primers": {
+     "fwd": {
+      "name": "5f2",
+      "seq": "GGGGWGAYCAGAAGAAGGC"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true,
+    "note": "同上，預設候補"
+   }
+  ],
+  "database": "NCBI nt + Stud Mycol 112 (2025) type 序列",
+  "note": "WARN：需讀全文才能列專屬引子；P. chartarum 與 sporidesmin 毒素相關",
+  "strains": 1
+ },
+ "Phaeosphaeria": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "LSU",
+    "gene": "LSU",
+    "primers": {
+     "fwd": {
+      "name": "LR0R",
+      "seq": "ACCCGCTGAACTTAAGC"
+     },
+     "rev": {
+      "name": "LR5",
+      "seq": "TCCTGAGGGAAACTTCG"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 2,
+    "marker": "TEF1",
+    "gene": "tef1",
+    "primers": {
+     "fwd": {
+      "name": "EF1-983F",
+      "seq": "GCYCCYGGHCAYCGTGAYTTYAT"
+     },
+     "rev": {
+      "name": "EF1-2218R",
+      "seq": "ATGACACCRACRGCRACRGTYTG"
+     }
+    },
+    "seq_verified": true
+   }
+  ],
+  "database": "NCBI nt（舊名多已改屬，先確認 GenBank 條目名稱是否最新）",
+  "note": "WARN：Phaeosphaeriaceae 大量拆屬，近緣屬間易混",
+  "strains": 1
+ },
+ "Botryosporium": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "LSU",
+    "gene": "LSU",
+    "primers": {
+     "fwd": {
+      "name": "LR0R",
+      "seq": "ACCCGCTGAACTTAAGC"
+     },
+     "rev": {
+      "name": "LR5",
+      "seq": "TCCTGAGGGAAACTTCG"
+     }
+    },
+    "seq_verified": true,
+    "note": "判分類位置；研究檔未指定該屬專用 LSU 引子，採通用 LR0R/LR5"
+   }
+  ],
+  "database": "NCBI nt（JX666334 為 B. longibrachiatum 參考序列之一）",
+  "note": "WARN：僅見 ITS BLAST ≥99% 的零星報告；第二基因無文獻依據，不推薦特定基因",
+  "strains": 1
+ },
+ "Edenia": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "LSU",
+    "gene": "LSU",
+    "primers": {
+     "fwd": {
+      "name": "LR0R",
+      "seq": "ACCCGCTGAACTTAAGC"
+     },
+     "rev": {
+      "name": "LR5",
+      "seq": "TCCTGAGGGAAACTTCG"
+     }
+    },
+    "seq_verified": true,
+    "note": "判定用；研究檔未指定該屬專用 LSU 引子，採通用 LR0R/LR5"
+   }
+  ],
+  "database": "NCBI nt",
+  "note": "WARN：未查得 ITS 解析度專門評估；第二基因無文獻依據",
+  "strains": 1
+ },
+ "Lichtheimia": {
+  "its_sufficient": true,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "LSU",
+    "gene": "LSU D1/D2",
+    "primers": {
+     "fwd": {
+      "name": "LR0R",
+      "seq": "ACCCGCTGAACTTAAGC"
+     },
+     "rev": {
+      "name": "LR5",
+      "seq": "TCCTGAGGGAAACTTCG"
+     }
+    },
+    "seq_verified": true,
+    "note": "複核用"
+   },
+   {
+    "priority": 2,
+    "marker": "TEF1/ACT",
+    "gene": "tef1 / actin",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查"
+   }
+  ],
+  "database": "NCBI nt（舊 GenBank 標 L. corymbifera 者可能實為 L. ramosa）",
+  "note": "ITS 為主可到種；Absidia 部分種已移入 Lichtheimia",
+  "strains": 1
+ },
+ "Rhizomucor": {
+  "its_sufficient": true,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "LSU",
+    "gene": "LSU D1/D2",
+    "primers": {
+     "fwd": {
+      "name": "LR0R",
+      "seq": "ACCCGCTGAACTTAAGC"
+     },
+     "rev": {
+      "name": "LR5",
+      "seq": "TCCTGAGGGAAACTTCG"
+     }
+    },
+    "seq_verified": true,
+    "note": "備選 NL-1/NL-4"
+   }
+  ],
+  "database": "NCBI nt",
+  "note": "ITS 可到種(R. pusillus、R. miehei)；嗜熱種；未查得專屬 Rhizomucor taxonomy 論文",
+  "strains": 1
+ },
+ "Mycotypha": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "LSU",
+    "gene": "LSU D1/D2",
+    "primers": {
+     "fwd": {
+      "name": "LR0R",
+      "seq": "ACCCGCTGAACTTAAGC"
+     },
+     "rev": {
+      "name": "LR5",
+      "seq": "TCCTGAGGGAAACTTCG"
+     }
+    },
+    "seq_verified": true,
+    "note": "判種用；研究檔未指定該屬專用 LSU 引子，採通用 LR0R/LR5"
+   }
+  ],
+  "database": "NCBI nt",
+  "note": "WARN：未查得屬內 barcode 評估，ITS+LSU 足夠為依 Mucorales 通則推論；無依據推薦第三基因",
+  "strains": 1
+ },
+ "Pichia": {
+  "its_sufficient": true,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "LSU",
+    "gene": "LSU D1/D2",
+    "primers": {
+     "fwd": {
+      "name": "NL-1",
+      "seq": "GCATATCAATAAGCGGAGGAAAAG"
+     },
+     "rev": {
+      "name": "NL-4",
+      "seq": "GGTCCGTGTTTCAAGACGG"
+     }
+    },
+    "seq_verified": true,
+    "note": "酵母標準為 D1/D2+ITS 並用；種界約 ≥1% D1/D2 差異為通則，非 hard cutoff"
+   },
+   {
+    "priority": 2,
+    "marker": "ACT/TEF1",
+    "gene": "ACT1 / EF-1α",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "少數近緣種對才需要；序列待查"
+   }
+  ],
+  "database": "NCBI nt + CBS/Westerdijk 酵母條碼庫",
+  "note": "Pichia 分類近年大幅變動(Candida 轉入)；Pichia kudriavzevii = Issatchenkia orientalis = Candida krusei，異名多",
+  "strains": 1
+ },
+ "Saccharomycopsis": {
+  "its_sufficient": true,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "LSU",
+    "gene": "LSU D1/D2",
+    "primers": {
+     "fwd": {
+      "name": "NL-1",
+      "seq": "GCATATCAATAAGCGGAGGAAAAG"
+     },
+     "rev": {
+      "name": "NL-4",
+      "seq": "GGTCCGTGTTTCAAGACGG"
+     }
+    },
+    "seq_verified": true
+   }
+  ],
+  "database": "NCBI nt + CBS/Westerdijk 酵母條碼庫",
+  "note": "WARN：僅有酵母通則依據，Saccharomycopsis 專屬文獻未查得",
+  "strains": 1
+ },
+ "Coprinellus": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "β-tubulin",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查（最可能出處 Nagy 2012）"
+   },
+   {
+    "priority": 2,
+    "marker": "LSU",
+    "gene": "LSU",
+    "primers": {
+     "fwd": {
+      "name": "LR0R",
+      "seq": "ACCCGCTGAACTTAAGC"
+     },
+     "rev": {
+      "name": "LR5",
+      "seq": "TCCTGAGGGAAACTTCG"
+     }
+    },
+    "seq_verified": true,
+    "note": "判屬；研究檔未指定該屬專用 LSU 引子，採通用 LR0R/LR5"
+   }
+  ],
+  "database": "NCBI nt",
+  "note": "多數種 ITS 能到種，有形態複合群時需第二基因；Coprinus 已拆為 Coprinellus/Coprinopsis/Parasola；菌絲體培養物留意 GenBank 錯標",
+  "strains": 1
+ },
+ "Perenniporia": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "LSU",
+    "gene": "LSU",
+    "primers": {
+     "fwd": {
+      "name": "LR0R",
+      "seq": "ACCCGCTGAACTTAAGC"
+     },
+     "rev": {
+      "name": "LR5",
+      "seq": "TCCTGAGGGAAACTTCG"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 2,
+    "marker": "RPB2/TEF1",
+    "gene": "rpb2 / tef1",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "深入用；序列待查"
+   }
+  ],
+  "database": "NCBI nt（舊 Perenniporia 名稱多已改屬）",
+  "note": "WARN：Perenniporia s.l. 為多系，須先定屬",
+  "strains": 1
+ },
+ "Phanerodontia": {
+  "its_sufficient": true,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "LSU",
+    "gene": "LSU",
+    "primers": {
+     "fwd": {
+      "name": "LR0R",
+      "seq": "ACCCGCTGAACTTAAGC"
+     },
+     "rev": {
+      "name": "LR5",
+      "seq": "TCCTGAGGGAAACTTCG"
+     }
+    },
+    "seq_verified": true,
+    "note": "ITS+LSU；研究檔未指定該屬專用 LSU 引子，採通用 LR0R/LR5"
+   },
+   {
+    "priority": 2,
+    "marker": "RPB2",
+    "gene": "rpb2",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "深入用；序列待查"
+   }
+  ],
+  "database": "NCBI nt（同種可能掛 Phanerochaete 或 Phanerodontia 兩個名字）",
+  "note": "WARN：屬名轉換依 Floudas & Hibbett 2015 脈絡推斷，Phanerodontia 專論未直接查得",
+  "strains": 1
+ },
+ "Thielaviopsis": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "tub2",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查(Mbenoun 2014)"
+   },
+   {
+    "priority": 2,
+    "marker": "TEF1",
+    "gene": "tef1",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查"
+   }
+  ],
+  "database": "NCBI nt",
+  "note": "Ceratocystis paradoxa 複合群需 ITS+β-tubulin+TEF-1α 才能分種；舊名 T. paradoxa 現多稱 Ceratocystis paradoxa / T. ethacetica",
+  "strains": 1
+ },
+ "Daldinia": {
+  "its_sufficient": "partial",
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "tub2",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查（最可能出處 Hsieh 2005；J Fungi 2024 引子在補充資料）"
+   },
+   {
+    "priority": 2,
+    "marker": "RPB2",
+    "gene": "rpb2",
+    "primers": {
+     "fwd": {
+      "name": null,
+      "seq": null
+     },
+     "rev": {
+      "name": null,
+      "seq": null
+     }
+    },
+    "seq_verified": false,
+    "note": "序列待查"
+   }
+  ],
+  "database": "NCBI nt（誤標較多，需配合 ex-type 序列）",
+  "note": "ITS 可初篩，到種不足；單株，ITS+LSU 到屬即可，到種再考慮 tub2",
+  "strains": 1
+ },
+ "Ovatospora": {
+  "its_sufficient": false,
+  "markers": [
+   {
+    "priority": 1,
+    "marker": "Btub",
+    "gene": "tub2",
+    "primers": {
+     "fwd": {
+      "name": "T1",
+      "seq": "AACATGCGTGAGATTGTAAGT"
+     },
+     "rev": {
+      "name": "TUB4Rd",
+      "seq": "CCRGAYTGRCCRAARACRAAGTTGTC"
+     }
+    },
+    "seq_verified": true
+   },
+   {
+    "priority": 2,
+    "marker": "RPB2",
+    "gene": "rpb2",
+    "primers": {
+     "fwd": {
+      "name": "5f2",
+      "seq": "GGGGWGAYCAGAAGAAGGC"
+     },
+     "rev": {
+      "name": "7CR",
+      "seq": "CCCATRGCTTGYTTRCCCAT"
+     }
+    },
+    "seq_verified": true
+   }
+  ],
+  "database": "NCBI nt + Wang 2016/2022 樹",
+  "note": "ITS 不可靠(同 Chaetomiaceae)；Ovatospora 為 Wang 2016 自 Chaetomium 拆出；單株，建議以 tub2 為主",
+  "strains": 1
+ }
+}

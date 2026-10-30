@@ -1,0 +1,10 @@
+# Python 3.14.7（本機）
+biopython==1.87
+numpy==2.5.4
+PyYAML==6.0.3
+# 網頁介面（Phase 3）
+streamlit==1.66.1
+pandas==3.1.0
+# 開發／測試用
+pytest==9.2.0
+pyflakes==4.1.0

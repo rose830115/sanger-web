@@ -1,0 +1,104 @@
+# Sanger 比對流程設定檔（所有路徑與門檻都在這裡改，不要改程式）
+# 相對路徑一律以「本檔所在資料夾」為基準。
+
+paths:
+  # NAS 實體菌株定序根目錄（SKILL.md 路徑設定的 NAS_ROOT）。
+  # 換電腦／換掛載點時只改這一行；也可用環境變數 SANGER_NAS_ROOT 覆蓋。
+  nas_root: "/Volumes/實驗室共用區MRC/#YCT資料區#/63. 限制酶鑑定資料庫/MRC 實體菌株黴菌指紋/實體菌株定序"
+  rawdata_subdir: "rawdata"          # {nas_root}/rawdata
+  output_subdir: "定序整理結果"       # {nas_root}/定序整理結果
+  # 若要把輸出寫到別處（例如測試），填絕對或相對路徑；留空 = 用 nas_root/output_subdir
+  rawdata_dir: ""
+  output_dir: ""
+  gene_lookup: "data/gene_lookup.json"
+
+qc:                                   # sanger_qc.py 判定門檻
+  min_trimmed_len: 250                # 低於此長度 -> FAIL
+  fail_q20_pct: 50                    # Q20% 低於此 -> FAIL
+  warn_q20_pct: 85                    # Q20% 低於此 -> WARN
+  fail_mean_q: 25                     # mean Q 低於此 -> FAIL
+  warn_mean_q: 40                     # mean Q 低於此 -> WARN
+
+assembly:                             # sanger_pair_assemble.py 判定門檻
+  min_overlap_bp: 100                 # overlap 低於此 -> FAIL_ASSEMBLY_CHECK
+  fail_identity_pct: 90               # identity 低於此 -> FAIL_ASSEMBLY_CHECK
+  warn_identity_pct: 98               # identity 低於此 -> WARN_CONSENSUS_CHECK
+  max_ambiguous_n: 10                 # ambiguous N 超過 -> WARN_CONSENSUS_CHECK
+  single_read_min_q: 20               # 單條 read 覆蓋處，Q 低於此轉 N
+  conflict_q_diff: 5                  # 兩 read 不一致時，Q 差距 >= 此值才取高 Q 者
+
+blast:
+  database: "nt"
+  # 每個查詢保留的 hit 數（修正 🔴-8）。原 100 筆實測 78/173 條 query 全部達高品質門檻、集合在第 100 名被硬切。
+  # 拉到 1000（NCBI 網頁 BLAST 上限 5000）。NCBI 的 URL API 沒有「依 taxid 去重」選項、XML 也不含 taxid，
+  # 所以採「取大清單 + 解析時依物種（taxid 正規化後）去重」；清單仍被高品質 hit 塞滿時標 HITLIST_SATURATED。
+  # 內部暫定值，可調。
+  hitlist_size: 1000
+  min_identity: 99.0
+  min_qcov: 95.0                      # 覆蓋率分母＝query 與參考序列中較短者（修正 🔴-7）
+  # 最短對齊長度（bp）：高品質 hit 的對齊長度須 >= 此值，擋只對到保守區的短 hit。
+  # query 本身短於此值時不套用。內部暫定，非 CLSI 查證值，可調。
+  min_align_len: 300
+  entrez_query: "(none)"
+  # type material 第二輪（修正 🔴-5）：每個 marker 另跑一次只比 type 序列的 BLAST。
+  # type 結果主判、全庫為輔；第二輪沒有高品質 hit 只降信心（唯一物種降為「交集唯一（待覆核）」），不判錯。
+  # 代價：每個 marker 多送一次 NCBI（線上時間約加倍）。關閉後 type_status 標 TYPE_DISABLED，行為同 P5a。
+  type_round: true
+  type_entrez_query: "sequence from type[filter]"
+  # 學名正規化（修正 🟡-1／🔴-5／🟢-1）：hit 的 accession -> taxid -> NCBI Taxonomy 現行名稱，舊名／同義名在交集前就換成現行名。
+  # 需要 E-utilities（與 BLAST 同樣需要下方 email；沒信箱或設 false 就只吃快取、查不到的退回序列標題猜測）。
+  # 快取檔（accession->taxid、taxid->名稱）落檔重用，不含信箱；超過 taxonomy_cache_days 天的名稱才重查。
+  # 只替 identity >= taxonomy_min_pident（或排名前 20）的 hit 查 taxid，省 NCBI 請求。三個數值皆內部暫定，可調。
+  taxonomy_lookup: true
+  taxonomy_cache: "cache/taxonomy_cache.json"
+  taxonomy_cache_days: 90
+  taxonomy_min_pident: 95.0
+  tool_name: "sanger-web-blast"
+  # NCBI 要求留聯絡信箱。預設留空；啟用線上 BLAST 前請填實驗室共用信箱
+  # （不要填個人信箱）。也可用環境變數 SANGER_NCBI_EMAIL。
+  email: ""
+  # NCBI 佇列偶爾卡死（實測單一 request 40–70 分鐘），Biopython 只會無限輪詢。逾時就放棄該 request、同參數自動重發（log 記 BLAST_RESENT）。
+  # 重發後仍逾時：全庫輪＝該 marker 批次失敗（整單可斷點續跑）；type 輪＝只降信心並標 TIMEOUT_ABANDONED。三個數值皆內部暫定，可調。
+  request_timeout_sec: 900            # 第一次送出後等多久（秒）；0 = 不設逾時
+  resend_timeout_sec: 1800            # 重發後的逾時窗（秒）
+  max_resends: 1                      # 逾時後最多自動重發幾次
+  delay_between_markers_sec: 10       # 同訂單不同 marker 之間
+  delay_between_orders_sec: 15        # 訂單之間（NCBI 限速）
+
+species_summary:                      # cross_batch_summary.py（SKILL.md Step 7）
+  mismatch_limit: 10
+  genus_sp_keywords: ["clone", "gene", "genes", "genomic"]
+  output_name: "blast_species_summary.csv"
+
+consensus:                            # consensus_call.py（SKILL.md Step 6）
+  # 含這些字（全詞）的名稱不算唯一物種判斷用的二名法學名
+  exclude_keywords: ["clone", "gene", "genes", "genomic"]
+  # 綠燈閘門（修正 🔴-2）：任一參與 marker 的組裝非 PASS，或帶下列旗標 -> 降黃燈「唯一物種（待確認）」。
+  # 內部暫定，非 CLSI 查證值；可依實驗室經驗增減。
+  # MULTIPLE_SPECIES_IN_TOP20 不列入：近緣種並存很常見，由唯一物種三條件（🔴-4）處理。
+  blocking_flags: ["LOW_TOP_QCOV", "MULTIPLE_GENERA_IN_TOP20", "NO_SPECIES_PARSED", "HITLIST_SATURATED"]
+  # 唯一物種三條件（修正 🔴-4）：交集＝1，且該種在每個 marker 為最高分（差 <= top_tolerance_pct），
+  # 且至少一個 marker 與次佳「非同義」種的 identity 差 >= min_gap_pct；不符 -> 黃燈「交集唯一（待覆核）」。
+  # 兩個數值皆為內部暫定，非 CLSI 查證值（CLSI MM18 原文未取得，0.8% 為單一研究做法），可調。
+  top_tolerance_pct: 0.2
+  min_gap_pct: 0.8
+  # 同義種群組（交集判讀算差距時視為同一種）；同種小名但屬名不同者程式自動視為同義。例：[["A b", "C d"]]
+  synonym_groups: []
+  # 同一株（樣本編號相同）跨訂單補做 marker 時合併判讀（修正 🟡-14）。
+  # 前提：樣本編號同一株永遠同編號、不重用（Rose 2026-10-30 確認）。
+  merge_across_orders: true
+  # 屬名別名（舊名／異名 -> 知識庫 gene_lookup 的鍵）。taxid 正規化後多數舊名已是現行名，這裡只補
+  # 「現行名在知識庫沒有、但舊屬名有」的情況（例：Parengyodontium 的知識庫鍵是 Engyodontium）。內部暫定，可增減。
+  genus_aliases:
+    Parengyodontium: Engyodontium
+    Emericella: Aspergillus
+    Eurotium: Aspergillus
+    Neosartorya: Aspergillus
+    Hypocrea: Trichoderma
+
+app:                                  # Streamlit 網頁介面（app.py）
+  # 本機資料夾模式：雲端版一律 false（雲端碰不到 NAS）。
+  # 在實驗室電腦本機跑時可改 true，或設環境變數 SANGER_ENABLE_LOCAL_MODE=1。
+  enable_local_mode: false
+  # 本機模式的輸出夾（相對於專案根）。絕不可放在 NAS 底下，程式會擋。
+  local_output_dir: "local_output"
